@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +49,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\CustomerConfiguration.cs" />
+    <Compile Include="Configurations\EntityBaseConfiguration.cs" />
+    <Compile Include="Configurations\GenreConfiguration.cs" />
+    <Compile Include="Configurations\MovieConfiguration.cs" />
+    <Compile Include="Configurations\RentalConfiguration.cs" />
+    <Compile Include="Configurations\RoleConfiguration.cs" />
+    <Compile Include="Configurations\StockConfiguration.cs" />
+    <Compile Include="Configurations\UserConfiguration.cs" />
+    <Compile Include="Configurations\UserRoleConfiguration.cs" />
+    <Compile Include="VinhCinemaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VinhCinema.Entities\VinhCinema.Entities.csproj">
+      <Project>{a8cf0619-b686-4617-b696-7acddb969466}</Project>
+      <Name>VinhCinema.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
