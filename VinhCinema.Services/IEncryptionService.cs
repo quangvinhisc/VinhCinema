@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace VinhCinema.Services
 {
-    public class Class1
+    public interface IEncryptionService
     {
+        string CreateSalt();
+        string EncryptPassword(string password, string salt);
     }
 }
