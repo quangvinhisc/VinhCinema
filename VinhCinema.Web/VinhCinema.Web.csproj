@@ -112,11 +112,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.2\lib\net40\System.Web.Optimization.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Web.Optimization.Less, Version=1.3.0.0, Culture=neutral, PublicKeyToken=9b7581e0240fe480, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Web.Optimization.Less.1.3.4\lib\net40\System.Web.Optimization.Less.dll</HintPath>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
@@ -167,22 +163,101 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\css\bootstrap-theme.css" />
+    <Content Include="content\css\bootstrap.css" />
+    <Content Include="content\css\font-awesome.css" />
+    <Content Include="content\css\jquery.fancybox.css" />
+    <Content Include="content\css\loading-bar.css" />
+    <Content Include="content\css\morris.css" />
+    <Content Include="content\css\site.css" />
+    <Content Include="content\css\toastr.css" />
+    <Content Include="content\fonts\fontawesome-webfont.svg" />
+    <Content Include="content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="content\images\background.jpg" />
+    <Content Include="content\images\movies\antman.jpg" />
+    <Content Include="content\images\movies\background.jpg" />
+    <Content Include="content\images\movies\batmanvssuperman.jpg" />
+    <Content Include="content\images\movies\betafish.jpg" />
+    <Content Include="content\images\movies\edgeoftomorrow.jpg" />
+    <Content Include="content\images\movies\fantasticfour.jpg" />
+    <Content Include="content\images\movies\home.jpg" />
+    <Content Include="content\images\movies\insideout.jpg" />
+    <Content Include="content\images\movies\jurassicworld.jpg" />
+    <Content Include="content\images\movies\madmax.jpg" />
+    <Content Include="content\images\movies\minions.jpg" />
+    <Content Include="content\images\movies\southpaw.jpg" />
+    <Content Include="content\images\movies\spectre.jpg" />
+    <Content Include="content\images\movies\ted2.jpg" />
+    <Content Include="content\images\movies\thelongestride.jpg" />
+    <Content Include="content\images\movies\thewalkingdead.jpg" />
+    <Content Include="content\images\movies\trainwreck.jpg" />
+    <Content Include="content\images\movies\truedetective.jpg" />
+    <Content Include="content\images\movies\unknown.jpg" />
+    <Content Include="content\images\movies\Wallpaper 8.png" />
+    <Content Include="content\images\raty\star-half-big.png" />
+    <Content Include="content\images\raty\star-half.png" />
+    <Content Include="content\images\raty\star-off-big.png" />
+    <Content Include="content\images\raty\star-off.png" />
+    <Content Include="content\images\raty\star-on-big.png" />
+    <Content Include="content\images\raty\star-on.png" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\spa\app.js" />
+    <Content Include="Scripts\spa\modules\common.core.js" />
+    <Content Include="Scripts\spa\modules\common.ui.js" />
+    <Content Include="Scripts\Vendors\angucomplete-alt.min.js" />
+    <Content Include="Scripts\Vendors\angular-base64.js" />
+    <Content Include="Scripts\Vendors\angular-cookies.js" />
+    <Content Include="Scripts\Vendors\angular-file-upload.js" />
+    <Content Include="Scripts\Vendors\angular-route.js" />
+    <Content Include="Scripts\Vendors\angular-validator.js" />
+    <Content Include="Scripts\Vendors\angular.js" />
+    <Content Include="Scripts\Vendors\bootstrap.js" />
+    <Content Include="Scripts\Vendors\jquery.fancybox-media.js" />
+    <Content Include="Scripts\Vendors\jquery.fancybox.js" />
+    <Content Include="Scripts\Vendors\jquery.js" />
+    <Content Include="Scripts\Vendors\jquery.raty.js" />
+    <Content Include="Scripts\Vendors\loading-bar.js" />
+    <Content Include="Scripts\Vendors\modernizr.js" />
+    <Content Include="Scripts\Vendors\morris.js" />
+    <Content Include="Scripts\Vendors\raphael.js" />
+    <Content Include="Scripts\Vendors\respond.src.js" />
+    <Content Include="Scripts\Vendors\toastr.js" />
+    <Content Include="Scripts\Vendors\ui-bootstrap-tpls-0.13.1.js" />
+    <Content Include="Scripts\Vendors\underscore.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AutofacWebapiConfig.cs" />
+    <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Extensions\RequestMessageExtensions.cs" />
+    <Compile Include="Infrastructure\MessageHandlers\VinhCinemaAuthHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="content\fonts\fontawesome-webfont.eot" />
+    <Content Include="content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="content\fonts\fontawesome-webfont.woff" />
+    <Content Include="content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="content\fonts\FontAwesome.otf" />
+    <Content Include="content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -192,7 +267,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
