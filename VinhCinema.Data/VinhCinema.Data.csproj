@@ -74,6 +74,10 @@
     <Compile Include="Migrations\201609040439473_InitialVinhCinema.Designer.cs">
       <DependentUpon>201609040439473_InitialVinhCinema.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609071537119_AddMoreUser.cs" />
+    <Compile Include="Migrations\201609071537119_AddMoreUser.Designer.cs">
+      <DependentUpon>201609071537119_AddMoreUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="VinhCinemaContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,6 +95,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201609040439473_InitialVinhCinema.resx">
       <DependentUpon>201609040439473_InitialVinhCinema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609071537119_AddMoreUser.resx">
+      <DependentUpon>201609071537119_AddMoreUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

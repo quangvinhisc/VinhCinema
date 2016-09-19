@@ -17,19 +17,19 @@ namespace VinhCinema.Data.Migrations
         protected override void Seed(VinhCinemaContext context)
         {
             //  create genres
-            context.GenreSet.AddOrUpdate(g => g.Name, GenerateGenres());
+            //context.GenreSet.AddOrUpdate(g => g.Name, GenerateGenres());
 
             // create movies
-            context.MovieSet.AddOrUpdate(m => m.Title, GenerateMovies());
+            //context.MovieSet.AddOrUpdate(m => m.Title, GenerateMovies());
 
             //// create stocks
-            context.StockSet.AddOrUpdate(GenerateStocks());
+            //context.StockSet.AddOrUpdate(GenerateStocks());
 
             // create customers
-            context.CustomerSet.AddOrUpdate(GenerateCustomers());
+            //context.CustomerSet.AddOrUpdate(GenerateCustomers());
 
             // create roles
-            context.RoleSet.AddOrUpdate(r => r.Name, GenerateRoles());
+            //context.RoleSet.AddOrUpdate(r => r.Name, GenerateRoles());
 
             // username: chsakell, password: homecinema
             context.UserSet.AddOrUpdate(u => u.Email, new User[]{

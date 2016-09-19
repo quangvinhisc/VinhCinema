@@ -1,8 +1,8 @@
-(function(){
+(function () {
     'use strict';
-    angular.module('VinhCinema', ['common.core', 'common.ui']).config(config);
-    config.$inject['$routeProvider'];
-    function config($routeProvider) {
+    angular.module('VinhCinema', ['common.core', 'common.ui']).config(configFunction).run(run);
+    configFunction.$inject = ["$routeProvider"];
+    function configFunction($routeProvider) {
         $routeProvider
             .when("/", {
                 templateUrl: "scripts/spa/home/index.html",
@@ -45,4 +45,32 @@
                 controller: "rentStatsCtrl"
             }).otherwise({ redirectTo: "/" });
     }
-})()
+
+    run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];
+    function run($rootScope, $location, $cookieStore, $http)
+    {
+        $rootScope.repository = $cookieStore.get('repository') || {};
+        if ($rootScope.repository.loggedUser) {
+            $http.default.headers.common['Authorization'] = $rootScope.repository.loggedUser.authdata; 
+        }
+
+        $(document).ready(function () {
+            $(".fancybox").fancybox({
+                openEffect: 'none',
+                closeEffect: 'none'
+            });
+
+            $('.fancybox-media').fancybox({
+                openEffect: 'none',
+                closeEffect: 'none',
+                helpers: {
+                    media: {}
+                }
+            });
+
+            $('[data-toggle=offcanvas]').click(function () {
+                $('.row-offcanvas').toggleClass('active');
+            });
+        });
+    }
+})();
