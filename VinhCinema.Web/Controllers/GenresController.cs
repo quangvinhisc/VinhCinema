@@ -13,6 +13,8 @@ using VinhCinema.Web.Models;
 
 namespace VinhCinema.Web.Controllers
 {
+    [Authorize(Roles = "Admin")]
+    [RoutePrefix("api/genres")]
     public class GenresController : ApiControllerBase
     {
         private readonly IEntityBaseRepository<Genre> _genresRepository;

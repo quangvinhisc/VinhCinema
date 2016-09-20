@@ -22,5 +22,4 @@ namespace VinhCinema.Web.Models
     }
 
 }
-    }
-}
+   
