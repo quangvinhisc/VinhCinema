@@ -121,9 +121,9 @@ namespace VinhCinema.Services
         {
             if (!isPasswordValid(user, password))
             {
-                return !user.IsLocked;
+                return false;
             }
-            return false;
+            return true;
         }
     }
 }

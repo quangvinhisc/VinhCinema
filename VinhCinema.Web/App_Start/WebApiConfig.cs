@@ -11,7 +11,8 @@ namespace VinhCinema.Web
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
-            config.MessageHandlers.Add(new VinhCinemaAuthHandler());
+            //config.MessageHandlers.Add(new WebApiHandler());
+            GlobalConfiguration.Configuration.MessageHandlers.Add(new VinhHandler());
             // Web API routes
             config.MapHttpAttributeRoutes();
 

@@ -51,7 +51,7 @@
     {
         $rootScope.repository = $cookieStore.get('repository') || {};
         if ($rootScope.repository.loggedUser) {
-            $http.default.headers.common['Authorization'] = $rootScope.repository.loggedUser.authdata; 
+            $http.defaults.headers.common['Authorization'] = $rootScope.repository.loggedUser.authdata; 
         }
 
         $(document).ready(function () {

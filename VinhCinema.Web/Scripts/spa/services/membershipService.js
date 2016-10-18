@@ -34,14 +34,14 @@
                     authdata: membershipData
                 }
             };
-            $http.default.headers.common['Authorization'] = 'Basic ' + membershipData;
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + membershipData;
             $cookieStore.put('repository', $rootScope.repository);   
         }
 
         function removeCredentials() {
             $rootScope.repository = {};
             $cookieStore.remove('repository');
-            $http.default.headers.common.Authorization = '';
+            $http.defaults.headers.common.Authorization = '';
         }
 
         function isUserLoggedIn(){

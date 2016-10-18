@@ -21,6 +21,7 @@ namespace VinhCinema.Web.Infrastructure.Mappings
                     .ForMember(vm => vm.IsAvailable, map => map.MapFrom(m => m.Stocks.Any(s => s.IsAvailable)))
                     .ForMember(vm => vm.NumberOfStocks, map => map.MapFrom(m => m.Stocks.Count))
                     .ForMember(vm => vm.Image, map => map.MapFrom(m => string.IsNullOrEmpty(m.Image) == true ? "unknown.jpg" : m.Image));
+                cfg.CreateMap<Customer, CustomerViewModel>();    
             });
             Mapper.AssertConfigurationIsValid();
         }

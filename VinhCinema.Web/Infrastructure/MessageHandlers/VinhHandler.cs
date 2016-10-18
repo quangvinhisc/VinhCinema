@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Security.Principal;
 using System.Text;
 using System.Threading;
@@ -12,18 +13,18 @@ using VinhCinema.Web.Infrastructure.Extensions;
 
 namespace VinhCinema.Web.Infrastructure.MessageHandlers
 {
-    public class VinhCinemaAuthHandler: DelegatingHandler
+    public class VinhHandler: DelegatingHandler
     {
         IEnumerable<string> authHeaderValues = null;
-        protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        protected async override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
             try
             {
+                HttpRequestHeaders requestHeaders = request.Headers;
                 request.Headers.TryGetValues("Authorization", out authHeaderValues);
                 if (authHeaderValues == null)
-                {
-                    return base.SendAsync(request, cancellationToken); // cross fingers
-                }
+                    return await base.SendAsync(request, cancellationToken); // cross fingers
+
                 var tokens = authHeaderValues.FirstOrDefault();
                 tokens = tokens.Replace("Basic", "").Trim();
                 if (!string.IsNullOrEmpty(tokens))
@@ -45,7 +46,7 @@ namespace VinhCinema.Web.Infrastructure.MessageHandlers
                         var response = new HttpResponseMessage(HttpStatusCode.Unauthorized);
                         var tsc = new TaskCompletionSource<HttpResponseMessage>();
                         tsc.SetResult(response);
-                        return tsc.Task;
+                        return await tsc.Task;
                     }
                 }
                 else
@@ -53,16 +54,16 @@ namespace VinhCinema.Web.Infrastructure.MessageHandlers
                     var response = new HttpResponseMessage(HttpStatusCode.Forbidden);
                     var tsc = new TaskCompletionSource<HttpResponseMessage>();
                     tsc.SetResult(response);
-                    return tsc.Task;
+                    return await tsc.Task;
                 }
-                return base.SendAsync(request, cancellationToken);
+                return await base.SendAsync(request, cancellationToken);
             }
-            catch 
+            catch
             {
                 var response = new HttpResponseMessage(HttpStatusCode.Forbidden);
                 var tsc = new TaskCompletionSource<HttpResponseMessage>();
                 tsc.SetResult(response);
-                return tsc.Task;
+                return await tsc.Task;
             }
         }
     }

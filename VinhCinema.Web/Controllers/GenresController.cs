@@ -27,7 +27,7 @@ namespace VinhCinema.Web.Controllers
 
         }
 
-        [AllowAnonymous]
+        
         public HttpResponseMessage Get(HttpRequestMessage request)
         {
             return CreateHttpResponse(request, () =>

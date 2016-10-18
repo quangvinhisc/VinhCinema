@@ -14,8 +14,9 @@ using VinhCinema.Web.Models;
 
 namespace VinhCinema.Web.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    
     [RoutePrefix("api/movies")]
+    [Authorize(Roles = "Admin")]
     public class MoviesController : ApiControllerBase
     {
         private readonly IEntityBaseRepository<Movie> _moviesRepository;
@@ -28,7 +29,7 @@ namespace VinhCinema.Web.Controllers
             
         }
 
-        [AllowAnonymous]
+        
         [Route("latest")]
         public HttpResponseMessage Get(HttpRequestMessage request)
         {
